@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "mediarift",
+  "version": "${version}",
+  "name": "MediaRift",
+  "description": "A browser in a small window inside Minecraft: music (YouTube Music), YouTube, and Twitch / Kick live streams. Move it anywhere, pin it, control it with hotkeys.",
+  "authors": ["Mef1sh"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.mef1sh.mediarift.MediaRiftClient"],
+    "modmenu": ["com.mef1sh.mediarift.ModMenuIntegration"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.0",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*",
+    "rinku": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}

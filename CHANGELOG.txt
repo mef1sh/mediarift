@@ -1,0 +1,46 @@
+3.17.0  (project v45, Minecraft 26.3)
+  - New installs: the window starts in the top-LEFT corner (was top-right). Your own place in the settings stays as it is;
+    the "Top left" corner button in the settings moves it there.
+  - Green pin + inside a world: the window and its buttons are now also drawn ON TOP of game screens
+    (advancements, inventory with the recipe book, pause menu, ...). Before, it was only shown there with the purple pin.
+
+3.17.0+26.3  (project v44, 26.3 version) -- moved to Minecraft 26.3 (made from the 26.2 version)
+  - Minecraft 26.3, Fabric API 0.166.0, Rinku 3.0.5 for 26.3, Mod Menu 21. Java 25, Gradle 9.7, Loom 1.18.2.
+  - 26.3 uses SDL3 instead of GLFW for the keyboard and mouse: key numbers are different now.
+    Default hotkeys use the SDL numpad keys; Esc, Shift, Ctrl, Alt and the left mouse button use Minecraft's
+    InputConstants names. Ctrl / Shift / Alt of a hotkey are read with hasShiftDown / hasControlDown / hasAltDown
+    (the mod's saved numbers stay the same). KeyEvent.scancode() is now keycode(). Rinku gets scan code 0.
+  - Nothing else changed: same settings, hotkeys, commands /sb and /psb.
+
+3.17.0+26.2  (project v44, 26.2 version) -- moved to Minecraft 26.2 (made from the 26.1.2 version)
+  - Minecraft 26.2, Fabric API 0.161.0, Rinku 3.0.5 for 26.2, Mod Menu 20. Java 25.
+  - 26.2 moved screens and the HUD into Minecraft's "gui": mc.screen -> mc.gui.screen(), mc.setScreen -> mc.gui.setScreen,
+    chat and action bar messages -> mc.gui.hud, "GUI hidden (F1)" -> mc.gui.hud.isHidden().
+  - Nothing else changed: same settings, hotkeys, commands /sb and /psb.
+
+3.17.0+26.1.2  (project v44, 26.1.2 version) -- moved to Minecraft 26.1.2 (made from the 1.21.11 version)
+  - Minecraft 26.1.2, Fabric API 0.155.3, Rinku 3.0.5 for 26.1.2, Mod Menu 18. Java 25, Gradle 9.4, new Loom plugin.
+  - 26.1 is not scrambled any more: the whole code now uses Mojang's real names (Minecraft, GuiGraphicsExtractor,
+    Component, KeyMapping, Button, ...). Drawing is called "extract" now (extractRenderState, extractBackground).
+  - The HUD part is registered with HudElementRegistry; typing into the browser uses Fabric's allowCharType event
+    instead of the keyboard mixin (no mixins any more).
+  - The MediaRift volume slider in Music & Sounds is a small slider in the bottom-left corner.
+  - Nothing else changed: same settings, hotkeys, commands /sb and /psb.
+
+3.17.0+1.21.11  (project v44, 1.21.11 version) -- moved to Minecraft 1.21.11
+  - Minecraft 1.21.11, Fabric API 0.141.6, Rinku 3.0.5 for 1.21.11, Mod Menu 17. Java 21, Gradle 9.1.
+  - 1.21.6 changed how menus are drawn: two small helper classes (DrawContext.java, MatrixStack.java) keep the old way of
+    talking for the rest of the mod. The browser picture is now drawn as a normal Minecraft texture (Rinku gives it).
+    "In front of the buttons" uses a new layer on top instead of depth.
+  - 1.21.9 changed keys and mouse (KeyInput, Click, CharInput): converted where they come in, inside the mod nothing changed.
+  - Hotkey category is now key.category.mediarift.main (language files updated).
+  - Nothing else changed: same settings, hotkeys, commands /sb and /psb.
+
+3.16.1  (project v43) -- the mod is now called MediaRift (it was "Music Browser")
+  - NEW name everywhere: mod id mediarift, jar mediarift-3.16.1.jar, config/mediarift.json, folder mediarift_tools.
+    Old files (settings, start page, downloaded streamlink + ffmpeg) are moved to the new names once.
+    NOTE: Minecraft forgets hotkeys you changed in Controls (the key names changed): set them again in the settings.
+  - Loading screen text is polite now, and says that restarting the game can help.
+  - Code cleaned for publishing: unused code, old test switches and old settings migrations removed.
+
+3.15.1  and older: see the old "Music Browser" zips.
