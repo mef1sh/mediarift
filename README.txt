@@ -27,6 +27,7 @@ HOW TO USE
   4. The thumbtack next to the bar: white = only in the chat, green = pinned (stays when the chat is closed),
      purple = super pin (visible on every screen, music keeps playing outside the world).
   5. T opens the same panel in every menu (pause menu, title screen, options ...).
+     The hotkeys (volume, pin, play/pause, ...) also work in every menu, pinned or not (not while you type into a text box).
 
 HOTKEYS (default = numpad; change them in the settings tab "Keys" or in Controls)
   Num 0  open / close the window        Num 5  play / pause

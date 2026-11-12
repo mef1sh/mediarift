@@ -1,3 +1,10 @@
+3.17.1  (project v46, Minecraft 26.3)
+  - Hotkeys (volume up/down, pin, play/pause, prev/next, size, ...) now work in EVERY menu: title screen, pause menu, options,
+    inventory, advancements ... Before, they worked only in the pause menu with a pin and in the title screen with the super pin.
+    It does not matter any more if you are pinned or super pinned. The short volume / pin hints show in every menu too.
+  - Not touched on purpose: the chat, sign and book screens, the Controls screen, the MediaRift settings, and any text box
+    with the cursor in it (so numpad digits can still be typed there).
+
 3.17.0  (project v45, Minecraft 26.3)
   - New installs: the window starts in the top-LEFT corner (was top-right). Your own place in the settings stays as it is;
     the "Top left" corner button in the settings moves it there.
