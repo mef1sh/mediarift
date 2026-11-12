@@ -2,9 +2,7 @@ package com.mef1sh.mediarift;
 
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.PauseScreen;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.client.KeyMapping;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.input.KeyEvent;
@@ -18,8 +16,8 @@ import java.util.List;
 /**
  * Hotkeys. They also show up in Minecraft's own Controls screen (category "MediaRift"),
  * and the settings screen of the mod has a tab to change them.
- * They work in the game when no screen is open, even if the on-screen buttons are hidden, and also in the pause menu
- * (when pinned) and in the title screen (when super pinned).
+ * They work in the game when no screen is open, even if the on-screen buttons are hidden, and also in every menu
+ * (pause menu, title screen, inventory, ...), pinned or not.
  */
 public final class ModKeys {
 	/** 1.21.9+: a category is an object now. Its name comes from the language file: key.category.mediarift.main */
@@ -135,14 +133,12 @@ public final class ModKeys {
 	}
 
 	/**
-	 * Where the hotkeys may be used inside a screen: the pause menu (Esc) when the player is pinned, and the title
-	 * screen (main menu) when it is super pinned. Other screens are left alone (typing, changing keys, ...).
+	 * Where the hotkeys may be used inside a screen: EVERY screen (pause menu, title screen, inventory, advancements, settings ...),
+	 * no matter if the player is pinned or super pinned. Only the screens where keys mean something else are left alone
+	 * (chat, typing, changing keys, the player settings itself). A text box with the cursor in it is checked separately.
 	 */
 	public static boolean screenKeysAllowed(Screen s) {
-		PlayerConfig c = PlayerConfig.get();
-		if (s instanceof PauseScreen) return c.pinned || c.superPinned;
-		if (s instanceof TitleScreen) return c.superPinned;
-		return false;
+		return MediaRiftClient.menuUiAllowed(s);
 	}
 
 	/** @return true if the key is one of ours (then the screen must not use it). */
